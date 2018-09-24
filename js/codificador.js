@@ -72,7 +72,8 @@ function codificarTexto() {
 }
 
 /**
- * 
+ * @description: Obtener el codigo de las letras.
+ * @param: letras --> Se recive la letra a que se le quiere obtener el código.
  */
 function obtenerCodigoLetra(letra){
     var codigoLetra;
