@@ -41,6 +41,8 @@ function cargarValoresLista() {
  */
 function decodificarTexto() {
     var valorTextoRegistrado = txtPalabraAdecodificar.value.toLowerCase(); //Se convierte el texto en munusculas para evitar inconsistencia con las letras mayusculas
+    valorTextoRegistrado = valorTextoRegistrado.replace(',', '.');
+
     var valorPalabraClave = ddlLetraClave.options[ddlLetraClave.selectedIndex].value;
     var arregloDeCodigoTextoRegistrado;
     var codigoPalabraClave;
@@ -63,6 +65,7 @@ function decodificarTexto() {
     for (var count = 0; count < arregloDeCodigoTextoRegistrado.length; count++) {
         var codigoLetra = parseFloat(arregloDeCodigoTextoRegistrado[count]);
         var codigoLetraCalculado;
+        
         if (resultadoDecodificacion == undefined) {
             codigoLetraCalculado = (2 * codigoLetra) - codigoPalabraClave;
             codigoLetraCalculado = obtenerLetra(codigoLetraCalculado);
