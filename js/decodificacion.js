@@ -65,7 +65,7 @@ function decodificarTexto() {
     for (var count = 0; count < arregloDeCodigoTextoRegistrado.length; count++) {
         var codigoLetra = parseFloat(arregloDeCodigoTextoRegistrado[count]);
         var codigoLetraCalculado;
-        
+
         if (resultadoDecodificacion == undefined) {
             codigoLetraCalculado = (2 * codigoLetra) - codigoPalabraClave;
             codigoLetraCalculado = obtenerLetra(codigoLetraCalculado);
@@ -73,6 +73,12 @@ function decodificarTexto() {
         }
         else {
             codigoLetraCalculado = (2 * codigoLetra) - codigoPalabraClave;
+
+            if(codigoLetraCalculado === 0){
+                codigoLetra = parseFloat(codigoLetra + '.5');
+                codigoLetraCalculado = (2 * codigoLetra) - codigoPalabraClave;
+            }
+
             codigoLetraCalculado = obtenerLetra(codigoLetraCalculado);
             resultadoDecodificacion = resultadoDecodificacion + '' + codigoLetraCalculado;
         }
@@ -83,7 +89,7 @@ function decodificarTexto() {
 
 /**
  * @description: Obtener el codigo de las letras.
- * @param: codigoLetra --> Se recive la letra a que se le quiere obtener el código.
+ * @param {*} codigoLetra: Se recive el codigo encriptado de la letra.
  */
 function obtenerLetra(codigoLetra) {
     var codigoLetra;
@@ -96,4 +102,20 @@ function obtenerLetra(codigoLetra) {
     };
 
     return codigoLetra;
+}
+
+/**
+ * @description: Reemplaza el caracter de un texto por el configuracio por el control.
+ * @param {*} controlAReemplazar: Es this del elemnto que tiene el texto.
+ * @param {*} caracterAReemplazar: Es el caracter que tiene el texto que deseamos reemplazar.
+ * @param {*} caracterDeReeemplazo: Es el caracter que deseamos utilizar.
+ */
+function reemplazarCadenaDeTexto(controlAReemplazar, caracterAReemplazar, caracterDeReeemplazo){
+    var cadenaDeTextoAReemplazar;
+    var cadenaDeTextoReeplazado;
+
+    cadenaDeTextoAReemplazar = controlAReemplazar.value;
+    cadenaDeTextoReeplazado = cadenaDeTextoAReemplazar.replace(/\s/g, ' - ');
+    
+    controlAReemplazar.value = cadenaDeTextoReeplazado;
 }

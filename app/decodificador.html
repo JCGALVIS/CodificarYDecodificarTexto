@@ -19,10 +19,11 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 card-panel grey lighten-3">
+                    <a href="../index.html">Inicio</a>
                     <h4>Decodificador</h4>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="txtPalabraADecodificar" type="text" class="validate">
+                            <input id="txtPalabraADecodificar" type="text" class="validate" onblur="reemplazarCadenaDeTexto(this, ' ', ' - ');">
                             <label for="txtPalabraADecodificar">Código</label>
                         </div>
                     </div>
@@ -35,15 +36,18 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s12">
-                            <input type="button" id="btnDecodificar" style="width: 100%;" onclick="decodificarTexto();" class="btn-large" value="Decodificar texto"></input>
+                        <div class="col s3">
+                            <input type="button" id="btnDecodificar" style="width: 100%;" onclick="decodificarTexto();" class="btn-large" value="Decodificar texto" />
+                        </div>
+                        <div class="col s3">
+                            <input type="reset" id="btnLimpiarControles" style="width: 100%;" class="btn-large" value="Limpiar texto" onclick="document.getElementById('lblResultadoDecodificacion').innerHTML = '';" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12">
                             <label>Resultado</label>
                             <br/>
-                            <label style="font-size: 18px;" id="lblResultadoDecodificacion"></label>
+                            <label style="font-size: 18px; color: black;" id="lblResultadoDecodificacion"></label>
                         </div>
                     </div>
                 </div>
@@ -52,8 +56,8 @@
         <!--Fin del contenido de la pagina-->
     </form>
 </body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!--JavaScript al final del cuerpo para una carga optimizada-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="../js/materialize.min.js"></script>
 <script type="text/javascript" src="../js/decodificacion.js"></script>
 
