@@ -15,10 +15,10 @@ La codificación se basa en digitar un texto y mediante una palabra clave se gen
 
 **Ejemplo**
 
-| \*\*Texto: \*\* Hidruros
- \*\*Palabra clave: \*\* q
- \*\*Resultado con decimales: \*\* 13 - 13.5 - 11 - 18.5 - 20 - 18.5 - 17 - 19
- \*\*Resultado sin decimales: \*\* 13 - 13 - 11 - 18 - 20 - 18 - 17 - 19 |
+| **Texto:** Hidruros
+ **Palabra clave:** q
+ **Resultado con decimales:** 13 - 13.5 - 11 - 18.5 - 20 - 18.5 - 17 - 19
+ **Resultado sin decimales:** 13 - 13 - 11 - 18 - 20 - 18 - 17 - 19 |
 |:-------|
 
  | Es bastante sencillo convertir algunas palabras en \*\*negritas\*\* y otras en \*italicas\* con Markdown. Incluso puedes hacer un \[link a Google\]\(http://google.com\). |
