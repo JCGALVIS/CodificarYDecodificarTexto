@@ -21,7 +21,7 @@ La codificación se basa en digitar un texto y mediante una palabra clave se gen
  **Resultado sin decimales:** 13 - 13 - 11 - 18 - 20 - 18 - 17 - 19 |
 |:-------|
 
- | Es Prueba sencillo convertir algunas palabras en \*\*negritas\*\* y otras en \*italicas\* con Markdown. Incluso puedes hacer un \[link a Google\]\(http://google.com\). |
+ | **Texto:** Hidruros convertir algunas palabras en \*\*negritas\*\* y otras en \*italicas\* con Markdown. Incluso puedes hacer un \[link a Google\]\(http://google.com\). |
   |:-------|
 
   | Prueba. |
