@@ -40,14 +40,19 @@
                             <input type="button" id="btnCodificar" style="width: 100%;" onclick="codificarTexto();" class="btn-large" value="Codificar texto">
                         </div>
                         <div class="col s3">
-                            <input type="reset" id="btnLimpiarControles" style="width: 100%;" class="btn-large" value="Limpiar texto" onclick="document.getElementById('lblResultadoCodificacion').innerHTML = '';" />
+                            <input type="reset" id="btnLimpiarControles" style="width: 100%;" class="btn-large" value="Limpiar texto" onclick="document.getElementById('lblResultadoCodificacion').innerHTML = ''; document.getElementById('lblResultadoCodificacionRedondeado').innerHTML = '';" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            <label>Resultado</label>
+                            <label>Resultado:</label>
                             <br/>
-                            <label style="font-size: 18px;" id="lblResultadoCodificacion"></label>
+                            <label style="font-size: 18px; color: black;" id="lblResultadoCodificacion"></label>
+                        </div>
+                        <div class="col s12">
+                            <label>Resultado redondeado:</label>
+                            <br/>
+                            <label style="font-size: 18px; color: black;" id="lblResultadoCodificacionRedondeado"></label>
                         </div>
                     </div>
                 </div>

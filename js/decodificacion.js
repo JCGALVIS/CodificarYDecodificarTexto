@@ -12,6 +12,7 @@ var arraysNumerosImpares = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27];
 var txtPalabraAdecodificar = document.getElementById('txtPalabraADecodificar');
 var ddlLetraClave = document.getElementById('ddlLetraClave');
 var lblResultadoDecodificacion = document.getElementById('lblResultadoDecodificacion');
+var lblResultadoDecodificacionCodigo = document.getElementById('lblResultadoDecodificacionCodigo');
 
 /**
  * @description: Carga inicial del documento
@@ -41,15 +42,17 @@ function cargarValoresLista() {
  */
 function decodificarTexto() {
     var valorTextoRegistrado = txtPalabraAdecodificar.value.toLowerCase(); //Se convierte el texto en munusculas para evitar inconsistencia con las letras mayusculas
+
     valorTextoRegistrado = valorTextoRegistrado.replace(',', '.');
 
     var valorPalabraClave = ddlLetraClave.options[ddlLetraClave.selectedIndex].value;
     var arregloDeCodigoTextoRegistrado;
     var codigoPalabraClave;
     var resultadoDecodificacion;
+    var codigoResuelto;
 
     if (valorTextoRegistrado === "") {
-        alert('Debe registrar un texto.');
+        alert('Debe registrar un código.');
         txtPalabraACodificar
         return;
     };
@@ -66,24 +69,32 @@ function decodificarTexto() {
         var codigoLetra = parseFloat(arregloDeCodigoTextoRegistrado[count]);
         var codigoLetraCalculado;
 
-        if (resultadoDecodificacion == undefined) {
+        codigoLetraCalculado = (2 * codigoLetra) - codigoPalabraClave;
+
+        //Se valida que si el resultado de la operación de decodificación es igual a cero se asigna el .5
+        if (codigoLetraCalculado === 0) {
+            codigoLetra = parseFloat(codigoLetra + '.5');
             codigoLetraCalculado = (2 * codigoLetra) - codigoPalabraClave;
+        }
+
+        //Se crea para generar posible código de solución
+        if (codigoResuelto == undefined) {
+            codigoResuelto = codigoLetra;
+        }else{
+            codigoResuelto = codigoResuelto  + ' - ' + codigoLetra ;
+        }
+        
+        if (resultadoDecodificacion == undefined) {
             codigoLetraCalculado = obtenerLetra(codigoLetraCalculado);
             resultadoDecodificacion = codigoLetraCalculado;
         }
         else {
-            codigoLetraCalculado = (2 * codigoLetra) - codigoPalabraClave;
-
-            if(codigoLetraCalculado === 0){
-                codigoLetra = parseFloat(codigoLetra + '.5');
-                codigoLetraCalculado = (2 * codigoLetra) - codigoPalabraClave;
-            }
-
             codigoLetraCalculado = obtenerLetra(codigoLetraCalculado);
             resultadoDecodificacion = resultadoDecodificacion + '' + codigoLetraCalculado;
         }
     };
 
+    lblResultadoDecodificacionCodigo.innerHTML = codigoResuelto;
     lblResultadoDecodificacion.innerHTML = resultadoDecodificacion;
 }
 
@@ -110,12 +121,21 @@ function obtenerLetra(codigoLetra) {
  * @param {*} caracterAReemplazar: Es el caracter que tiene el texto que deseamos reemplazar.
  * @param {*} caracterDeReeemplazo: Es el caracter que deseamos utilizar.
  */
-function reemplazarCadenaDeTexto(controlAReemplazar, caracterAReemplazar, caracterDeReeemplazo){
+function reemplazarCadenaDeTexto(controlAReemplazar, caracterAReemplazar, caracterDeReeemplazo) {
     var cadenaDeTextoAReemplazar;
     var cadenaDeTextoReeplazado;
 
     cadenaDeTextoAReemplazar = controlAReemplazar.value;
-    cadenaDeTextoReeplazado = cadenaDeTextoAReemplazar.replace(/\s/g, ' - ');
-    
-    controlAReemplazar.value = cadenaDeTextoReeplazado;
+
+    if (cadenaDeTextoAReemplazar != '') {
+        if (!/^[0-9.@-\s]+$/g.test(cadenaDeTextoAReemplazar)) {
+            alert('El código no es numerico.');
+            return;
+        }
+    }
+
+    if (/^[0-9\s]+$/g.test(cadenaDeTextoAReemplazar)) {
+        cadenaDeTextoReeplazado = cadenaDeTextoAReemplazar.replace(/\s/g, ' - ');
+        controlAReemplazar.value = cadenaDeTextoReeplazado;
+    }
 }

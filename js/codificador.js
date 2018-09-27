@@ -10,6 +10,7 @@ var letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
 var txtPalabraACodificar = document.getElementById('txtPalabraACodificar');
 var ddlLetraClave = document.getElementById('ddlLetraClave');
 var lblResultadoCodificacion = document.getElementById('lblResultadoCodificacion');
+var lblResultadoCodificacionRedondeado = document.getElementById('lblResultadoCodificacionRedondeado');
 
 /**
  * @description: Carga inicial del documento
@@ -42,6 +43,8 @@ function codificarTexto() {
     var arregloDeletrasTextoRegistrado;
     var codigoPalabraClave;
     var resultadoCodificacion;
+    var resultadoCodificacionRedondeado;
+    var calculoCodigoResultado;
 
     if(valorTextoRegistrado === ""){
         alert('Debe registrar un texto.');
@@ -60,15 +63,20 @@ function codificarTexto() {
         var codigoLetra;        
 
         codigoLetra = obtenerCodigoLetra(arregloDeletrasTextoRegistrado[count]);
+        calculoCodigoResultado = (codigoLetra + codigoPalabraClave) / 2;
 
-        if(resultadoCodificacion == undefined){
-            resultadoCodificacion = (codigoLetra + codigoPalabraClave) / 2;
+        if(resultadoCodificacion == undefined){            
+            resultadoCodificacion = calculoCodigoResultado
+            resultadoCodificacionRedondeado = parseInt(calculoCodigoResultado);
+            
         }else{
-            resultadoCodificacion = resultadoCodificacion + ' - ' + (codigoLetra + codigoPalabraClave) / 2;
-        }
+            resultadoCodificacion = resultadoCodificacion + ' - ' + calculoCodigoResultado;
+            resultadoCodificacionRedondeado = resultadoCodificacionRedondeado + ' - ' +  parseInt(calculoCodigoResultado);
+        }        
     };
 
     lblResultadoCodificacion.innerHTML = resultadoCodificacion;
+    lblResultadoCodificacionRedondeado.innerHTML = resultadoCodificacionRedondeado;
 }
 
 /**
