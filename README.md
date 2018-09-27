@@ -4,9 +4,9 @@ Juego de codificación y decodificación de palabras
 ## Contenido ##
 
 - [Introducción](#introducción)
-- [La codificaciónducción](#La codificación)
-- [La decodificación](#la decodificación)
-- [Estrucura proyecto](#estrucura proyecto)
+- [La codificaciónducción](#Lacodificación)
+- [La decodificación](#ladecodificación)
+- [Estrucura proyecto](#estrucuraproyecto)
 - [Desarrollo](#desarrollo)
 
 ## Introducción ##
