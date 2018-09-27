@@ -25,3 +25,5 @@ La codificación se basa en digitar un texto y mediante una palabra clave se gen
   |:-------|
 
   | Prueba. |
+
+  |:-------|
