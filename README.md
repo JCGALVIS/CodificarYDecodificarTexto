@@ -7,6 +7,7 @@ Juego de codificación y decodificación de palabras
 - [La codificaciónducción](#La codificación)
 - [La decodificación](#la decodificación)
 - [Estrucura proyecto](#estrucura proyecto)
+- [Desarrollo](#desarrollo)
 
 ## Introducción ##
 
@@ -21,9 +22,21 @@ La codificación se basa en digitar un texto y mediante una palabra clave se gen
 La decodificacion se bas en recivir una cadena de numeros se parado por un espacio o delimitado por el caracter `-`, se debe seleccionar la palabre clave con la que se genera el codigo devolviendo dos resultados uno que es una posible repuesta del texto y el código con una posible correccion, según cumpla las validaciones de aprocimación y error.
 
 ## Estrucura proyecto ##
-### CodificarYDecodificarTexto
-    * Index.htlm
-    * app
-    * css
-    * js
 
+### CodificarYDecodificarTexto
+    * Index.html
+    * app
+        * codificador.html
+        * decodificador.html
+    * css
+        * materialize.css
+        * materialize.min.css
+    * js
+        * codificador.js
+        * decodificacion.js
+        * decodificacion.js
+        * materialize.min.js
+
+## Desarrollo ##
+
+El proyecto se desarrolla con HTML, JavaScript y el framework de CSS Materialize(https://materializecss.com/).
