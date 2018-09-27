@@ -13,18 +13,6 @@ Este juego esta basado en el codificar y descodificar palabras con el abecedario
 
 La codificación se basa en digitar un texto y mediante una palabra clave se genera una serie de codigos seprados por el siguiente caracter caracter `-`. 
 
-**Ejemplo**
+**La decodificación**
 
-| **Texto:** Hidruros
- **Palabra clave:** q
- **Resultado con decimales:** 13 - 13.5 - 11 - 18.5 - 20 - 18.5 - 17 - 19
- **Resultado sin decimales:** 13 - 13 - 11 - 18 - 20 - 18 - 17 - 19 |
-|:-------|
-
- | * **Texto:** Hidruros.
- * **Palabra clave:** q. convertir algunas palabras en \*\*negritas\*\* y otras en \*italicas\* con Markdown. Incluso puedes hacer un \[link a Google\]\(http://google.com\). |
-  |:-------|
-
-  | Prueba. |
-
-  |:-------|
+La decodificacion se bas en recivir una cadena de numeros se parado por un espacio o delimitado por el caracter `-`, se debe seleccionar la palabre clave con la que se genera el codigo devolviendo dos resultados uno que es una posible repuesta del texto y el código con una posible correccion, según cumpla las validaciones de aprocimación y error.
