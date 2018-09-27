@@ -15,7 +15,7 @@ La codificación se basa en digitar un texto y mediante una palabra clave se gen
 
 **Ejemplo**
 
-|\*\*Texto: \*\* Hidruros
+| \*\*Texto: \*\* Hidruros
  \*\*Palabra clave: \*\* q
  \*\*Resultado con decimales: \*\* 13 - 13.5 - 11 - 18.5 - 20 - 18.5 - 17 - 19
  \*\*Resultado sin decimales: \*\* 13 - 13 - 11 - 18 - 20 - 18 - 17 - 19
